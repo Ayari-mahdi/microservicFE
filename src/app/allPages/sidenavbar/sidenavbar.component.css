@@ -1,0 +1,6 @@
+.sidenavclass{
+    width: 55px !important;
+}
+.sidenavclass:hover{
+    width: 265px !important;
+}

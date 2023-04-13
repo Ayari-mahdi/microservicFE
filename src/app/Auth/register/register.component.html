@@ -1,0 +1,284 @@
+<div class="w-lg-600px p-10 p-lg-15 mx-auto">
+    <!--begin::Form-->
+    <form 
+    (ngSubmit)="submit()"
+    novalidate="novalidate"
+    [formGroup]="registrationForm"
+    class="form w-100" novalidate="novalidate" id="kt_sign_up_form">
+   
+        <!--begin::Heading  {{registrationForm.value |json}}-->
+        <div class="mb-10 text-center">
+            <!--begin::Title-->
+            <h1 class="text-dark mb-3">Create an Account</h1>
+            <!--end::Title-->
+            <!--begin::Link-->
+            <div class="text-gray-400 fw-bold fs-4">Already have an account? 
+            <a routerLink="/auth/login" class="link-primary ">Sign in here</a></div>
+            <!--end::Link-->
+        </div>
+        <!--end::Heading-->
+        <!--begin::Action
+        <button type="button" class="btn btn-light-primary fw-bolder w-100 mb-10">
+        <img alt="Logo" src="../../../assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Sign in with Google</button>-->
+        <!--end::Action-->
+        <!--begin::Separator
+        <div class="d-flex align-items-center mb-10">
+            <div class="border-bottom border-gray-300 mw-50 w-100"></div>
+            <span class="fw-bold text-gray-400 fs-7 mx-2">OR</span>
+            <div class="border-bottom border-gray-300 mw-50 w-100"></div>
+        </div>-->
+        <!--end::Separator-->
+        <!--begin::Input group-->
+        <div class="row fv-row mb-7">
+            <!--begin::Col-->
+            <div class="col-xl-6">
+                <label class="form-label fw-bolder text-dark fs-6">First Name</label>
+                <input
+                 class="form-control form-control-lg form-control-solid" 
+                 type="text" placeholder="" 
+                 name="firstname" 
+                 autocomplete="off"
+                 formControlName="firstname"
+                 [ngClass]="{
+                    'is-invalid': registrationForm.controls['firstname'].invalid && registrationForm.controls['firstname'].dirty && registrationForm.controls['firstname'].touched,
+                    'is-valid' : registrationForm.controls['firstname'].valid
+                  }"
+                 />
+                
+            </div>
+            <!--end::Col-->
+            <!--begin::Col-->
+            <div class="col-xl-6">
+                <label class="form-label fw-bolder text-dark fs-6">Last Name</label>
+                <input 
+                class="form-control form-control-lg form-control-solid" 
+                type="text" placeholder="" 
+                name="lastname" autocomplete="off"
+                formControlName="lastname"
+                [ngClass]="{
+                    'is-invalid': registrationForm.controls['lastname'].invalid && registrationForm.controls['lastname'].dirty && registrationForm.controls['lastname'].touched,
+                    'is-valid' : registrationForm.controls['lastname'].valid
+                  }"
+                 />
+                
+            </div>
+            <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+        <div class="fv-row mb-7">
+            <label class="form-label fw-bolder text-dark fs-6">Nom de l'utilisateur</label>
+            <input 
+            class="form-control form-control-lg form-control-solid" 
+            type="text" placeholder="" 
+            name="username" autocomplete="off"
+            formControlName="username"
+            [ngClass]="{
+                'is-invalid': registrationForm.controls['username'].invalid && registrationForm.controls['username'].dirty && registrationForm.controls['username'].touched,
+                'is-valid' : registrationForm.controls['username'].valid
+              }"
+            />
+        </div>
+
+        
+        
+        <!--begin::Input group-->
+        <div class="fv-row mb-7">
+           <label class="form-label fw-bolder text-dark fs-6">Email</label>
+            <input 
+            class="form-control form-control-lg form-control-solid" 
+            type="email" placeholder="" name="email"
+            autocomplete="off" 
+            formControlName="email"
+            [ngClass]="{
+                'is-invalid': registrationForm.controls['email'].invalid && registrationForm.controls['email'].dirty && registrationForm.controls['email'].touched,
+                'is-valid' : registrationForm.controls['email'].valid
+              }"
+            />
+          <!--  <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label  class="form-label fw-bolder text-dark fs-6">Email</mat-label>
+                <input  type="Email" matInput placeholder="" autocomplete="off" 
+                formControlName="email"
+                [ngClass]="{
+                    'is-invalid': registrationForm.controls['email'].invalid && registrationForm.controls['email'].dirty && registrationForm.controls['email'].touched,
+                    'is-valid' : registrationForm.controls['email'].valid
+                  }"
+                >
+              </mat-form-field>--> 
+         
+
+        </div>
+        <!--end::Input group
+          begin::Input group formControlName="departement"-->
+          <div class="fv-row mb-7">
+         
+            <mat-form-field class="example-chip-list " >
+                <mat-label class="form-label fw-bolder text-dark fs-6">Sélectionnez votre département *:</mat-label>
+                <mat-chip-list #chipList aria-label="Fruit selection" formArrayName="departement">
+                  <mat-chip
+                  style="color:blue"
+                    *ngFor="let fruit of fruits"
+                    (removed)="remove(fruit)">
+                    {{fruit}}
+                    <button matChipRemove>
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip>
+                  <input
+                    class="form-control form-control-lg form-control-solid"
+                    placeholder="New departement..."
+                    #fruitInput
+                    formControlName="departement"
+                    [formControl]="fruitCtrl"
+                    [matAutocomplete]="auto"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                  <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+                    {{fruit}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+                  
+              <!--   <label class="form-label fw-bolder text-dark fs-6">Sélectionnez votre département *:</label> 
+                <select class="form-control form-control-lg form-control-solid"    
+                  name="departement" formControlName="departement" required >
+              <option value="Direction Generale">Direction Generale</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Marketing">Marketing</option>          
+              <option value="Produit">Produit</option>
+              
+            </select>--> 
+
+         </div>
+  
+        <!--begin::Input group-->
+        <div class="mb-10 fv-row" data-kt-password-meter="true">
+            <!--begin::Wrapper-->
+            <div class="mb-1">
+                <!--begin::Label-->
+                <label class="form-label fw-bolder text-dark fs-6">Password</label>
+             <br>
+           
+           
+                <mat-slide-toggle (click)="changeshowDetails()">show password details</mat-slide-toggle>
+            
+  <br>
+
+           
+               <mat-form-field class="pt-5" appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+                    <mat-label>Password</mat-label>
+                    <!--<mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>-->
+                    <input matInput #password
+                    formControlName="password"
+                           [type]="hide ? 'password' : 'text'"
+                           name="password"
+                           required
+                           placeholder="">
+                           <span (click)="hide = !hide" class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+                            <i *ngIf="hide" class="bi bi-eye-slash fs-2"></i>
+                       <i *ngIf="!hide" class="bi bi-eye fs-2 "></i>
+                        </span>
+                         </mat-form-field>
+
+                    <mat-hint  aria-live="polite">
+                      {{password.value.length}} / {{passwordComponent.max}}
+                    </mat-hint>
+                 
+                <!-- @angular-material-extensions/password-strength's main component-->
+                  <mat-password-strength #passwordComponent
+                                         (onStrengthChanged)="onStrengthChanged($event)"
+                                         [password]="password.value">
+                  </mat-password-strength>
+                <!--  Password's strength info-->
+                  <mat-password-strength-info
+                    *ngIf="showDetails"
+                    [passwordComponent]="passwordComponent">
+                  </mat-password-strength-info>
+
+
+            </div>
+            <!--end::Wrapper-->
+            <!--begin::Hint-->
+            <div class="text-muted">Use 8 or more characters with a mix of letters, numbers &amp; symbols.</div>
+            <!--end::Hint-->
+        </div>
+        <!--end::Input group=-->
+        <!--begin::Input group
+        <div class="fv-row mb-5">
+            <label class="form-label fw-bolder text-dark fs-6">Confirm Password</label>
+            <input class="form-control form-control-lg form-control-solid" type="password" 
+            placeholder="" name="cPassword" 
+            autocomplete="off" 
+            formControlName="cPassword"
+            />
+        </div>--> 
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+            <mat-label>Confirm Password</mat-label>
+            <!--<mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>-->
+            <input matInput #cPassword
+            formControlName="cPassword"
+                   [type]="hide2 ? 'password' : 'text'"
+                   name="cPassword"
+                   required
+                   placeholder="">
+                   <span (click)="hide2 = !hide2" class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+                    <i *ngIf="hide2" class="bi bi-eye-slash fs-2"></i>
+                    <i *ngIf="!hide2" class="bi bi-eye fs-2 "></i>
+                </span>
+                 </mat-form-field>
+
+           
+            <!-- @angular-material-extensions/password-strength's main component-->
+            
+<!--  Password's strength info-->
+        <!--end::Input group-->
+        <!--begin::Input group-->
+        <div class="fv-row mb-10">
+            <label class="form-check form-check-custom form-check-solid form-check-inline">
+                <input class="form-check-input" type="checkbox" 
+                name="agree" value="1"
+                formControlName="agree"
+                />
+                <span class="form-check-label fw-bold text-gray-700 fs-6">I Agree 
+                <a href="#" class="ms-1 link-primary">Terms and conditions</a>.</span>
+            </label>
+        </div>
+        <div class="d-flex justify-content-center mb-5">
+          <ngx-recaptcha2 #captchaElem 
+          [siteKey]="siteKey"
+         
+          (reset)="handleReset()"
+          formControlName="recaptcha">
+        </ngx-recaptcha2>
+
+        </div>
+      
+        <!--end::Input group-->
+        <!--begin::ActionsrouterLink="/auth/postregistration "-->
+        <div class="text-center d-flex justify-content-center">
+            <button (click)="spinner=!spinner" type="submit" id="kt_sign_up_submit" class="btn btn-lg btn-primary"
+            [ngClass]="{'btn-success': registrationForm.valid, 'btn-danger': registrationForm.invalid}"
+            [disabled]="registrationForm.invalid"
+            >
+                <span class="indicator-label">Submit</span>
+            <!--    <span *ngIf="spinner"  class="indicator-progress">Please wait... 
+                <span *ngIf="spinner" class="spinner-border spinner-border-sm align-middle ms-2"></span></span>  -->     
+            </button>
+            <div style="margin-left:20px" class="d-flex justify-content-center align-items-center"  *ngIf="spinner"> 
+              <!--  <mat-progress-spinner
+                [diameter]="35"
+        class="example-margin"
+        [color]="color"
+        [mode]="mode">
+                </mat-progress-spinner>-->
+                   <span *ngIf="spinner"  >Please wait... 
+                    <span *ngIf="spinner" class="spinner-border spinner-border-sm align-middle ms-2"></span></span> 
+            </div>
+             
+        </div>
+        <!--end::Actions-->
+    </form>
+    <!--end::Form-->
+</div>

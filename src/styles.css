@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+/*body {
+    height: 100vh;
+    width: 100vw;
+  }*/
+  @import "~@ng-select/ng-select/themes/default.theme.css";
+ 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.cardstyle2{
+  height: 185px;min-width: 298px;
+  border-bottom: 3px solid white
+}
+.cardstyle2:hover
+{
+  animation: slidein 0.5s forwards;
+}
+
+.cardstyle{
+  height: 225px;min-width: 198px;
+  border-bottom: 3px solid white;
+}
+.cardstyle:hover
+{
+  animation: slidein 0.5s forwards;
+
+}
+@keyframes slidein {
+  
+  to {border-bottom: 3px solid rgba(138, 208, 248, 0.966);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+

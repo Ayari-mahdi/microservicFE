@@ -1,0 +1,13 @@
+  
+.form-control.is-invalid {
+    border-color: rgb(246, 78, 96);
+
+  }
+  .form-control.is-valid {
+    border-color: rgb(78, 201, 16);
+
+  }  
+.form-control:focus {
+    border-color: #1D3756;
+    background-color: transparent !important;
+  }

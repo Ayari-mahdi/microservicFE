@@ -1,0 +1,32 @@
+.ng-select.custom {
+    border:0px;
+    min-height: 0px;
+    border-radius: 0;
+}
+.ng-select.custom .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 0;
+}
+
+  
+.form-control.is-invalid {
+    border-color: rgb(246, 78, 96);
+
+  }
+  
+.form-control:focus {
+    border-color: #1D3756;
+    background-color: transparent !important;
+  }
+  .form-control.is-valid {
+    border-color: rgb(78, 201, 16);
+
+  }  
+   .was-validated .form-control:invalid, .form-control.is-invalid {
+     border-color: none;
+   }
+   .example-chip-list {
+    width: 100%;
+  }
+  
+ 
