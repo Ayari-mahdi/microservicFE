@@ -23,7 +23,7 @@ updatelink="http://localhost:8089/user/update";
   getUser(userid:any):Observable<[]>{
     return this.http.get<[]>(this.getuser+userid)
    }
-   auth(user: any ):Observable<any>{
+  auth(user: any ):Observable<any>{
     return this.http.post<any>(this.authlink,user)
     .pipe(map(userdata =>{
       console.log(userdata.tokken)

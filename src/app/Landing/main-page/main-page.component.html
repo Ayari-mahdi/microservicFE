@@ -33,56 +33,7 @@
                             </div>
                             <!--end::Logo-->
                             <!--begin::Menu wrapper-->
-                            <div class="d-lg-block" id="kt_header_nav_wrapper">
-                                <div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="200px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
-                                    <!--begin::Menu-->
-                                    <div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-500 menu-state-title-primary nav nav-flush fs-5 fw-bold" id="kt_landing_menu">
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin::Menu link-->
-                                            <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#kt_body" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true"></a>
-                                            <!--end::Menu link-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin::Menu link-->
-                                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#how-it-works" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true"></a>
-                                            <!--end::Menu link-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin::Menu link-->
-                                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#achievements" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true"></a>
-                                            <!--end::Menu link-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin::Menu link-->
-                                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#team" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true"></a>
-                                            <!--end::Menu link-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin::Menu link-->
-                                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#portfolio" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true"></a>
-                                            <!--end::Menu link-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin::Menu link-->
-                                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#pricing" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true"></a>
-                                            <!--end::Menu link-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu-->
-                                </div>
-                            </div>
+                          
                             <!--end::Menu wrapper-->
                             <!--begin::Toolbar-->
                             <div class="flex-equal text-end ms-1">
@@ -97,46 +48,74 @@
                     <!--end::Container-->
                 </div>
                 <!--start cards -->
-                <div  @fade  class="row py-20 px-10" style="background: #f2f6f7;"  >
+                <div  @fade  class="row pt-5 pb-20 px-10" style="background: #f2f6f7;"  >
                   <div class="col-md-12">
-                    <div  class="row" >
-                     <div class="col-md-6  col-lg-4 container pb-10">
+                  	<div class="card">
+                      <div class="card-px text-center pt-5 pb-15 "style="background: #f2f6f7;">
+                          <!--begin::Title-->
+                          <h2 class="fs-2x fw-bolder mb-0">welcome</h2>
+                          <!--end::Title-->
+                          <!--begin::Description-->
+                          <p class="text-gray-400 fs-4 fw-bold py-7">Municipalite X
+                          <br /></p>
+                          <!--end::Description-->
+                          <!--begin::Action-->
+                          <!--end::Action-->
+                        </div>
+                      <!--begin::Card body-->
+                      <div class="card-body containerstyle" style="background: #f2f6f7; ">
+                        <!--begin::Heading-->
+                        
+                        <!--end::Heading-->
+                       
+                            
+                           
+                        <div  class="row overlay" >
+                          <div class="col-md-4  col-lg-4 container pb-10">
        
-                              <app-enquete-qtv></app-enquete-qtv>
-             
-                   </div>
-                   <div class="col-md-6 col-lg-4 container pb-10 ">
-                       <app-enquete-rps></app-enquete-rps>
-              
-             
-                   </div>
-                   <div  
-              
-                   class="col-md-6 col-lg-4 container pb-10">
-                       <app-enquetepersonnalisable></app-enquetepersonnalisable>
-       
-                     
+                            <app-dashboardcard [title]="'Services'" [logo]="'checklist'" ></app-dashboardcard>               
+                        </div>
+                        <div class="col-md-4  col-lg-4 container pb-10 ">
+                          <app-dashboardcard [title]="'Reclamation'" [logo]="'survey'" ></app-dashboardcard>           
+          
+                        </div>
+                     <!--   <div  
                    
-                   </div>
-                   <div class="col-md-6 col-lg-4 container pb-10">
-           
-                     <!-- <app-tiles-day-state></app-tiles-day-state> -->
-                     <!-- <app-tiles-general-widget></app-tiles-general-widget> -->
-                     <app-analysemessagerie></app-analysemessagerie>
-       
-                   </div>
-           
-                   <div class="col-md-6 col-lg-4 container pb-10">
+                        class="col-md-6 col-lg-4 container pb-10">
+                            <app-enquetepersonnalisable></app-enquetepersonnalisable>
+            
+                          
+                        
+                        </div>
+                        <div class="col-md-6 col-lg-4 container pb-10">
+                
+                        
+                          <app-analysemessagerie></app-analysemessagerie>
+            
+                        </div>
+                
+                        <div class="col-md-6 col-lg-4 container pb-10">
+                         
+                            <app-vueentreprise></app-vueentreprise>
+            
+                        </div>
+                        <div class="col-md-6 col-lg-4 container pb-10 ">
+                
+                            <app-portaildeclaratif></app-portaildeclaratif>
+            
+                        </div>-->
                     
-                       <app-vueentreprise></app-vueentreprise>
-       
-                   </div>
-                   <div class="col-md-6 col-lg-4 container pb-10 ">
-           
-                       <app-portaildeclaratif></app-portaildeclaratif>
-       
-                   </div>
-           </div>
+                      </div>
+                        <!--begin::Illustration-->
+                       
+                        <div class="text-center  contentstyle">
+                          <img src="../../../assets/media/illustrations/sketchy-1/2.png" alt="" class="mw-100 h-200px h-sm-300px" />
+                        </div>
+                        <!--end::Illustration-->
+                      </div>
+                      <!--end::Card body-->
+                    </div>
+               
          </div>
        </div>
        <!-- end cards-->

@@ -1,0 +1,8 @@
+.containerstyle {
+    display: grid;
+  }
+  
+  .contentstyle, .overlay {
+    grid-area: 1 / 1;
+  }
+  .item1 { grid-area: header; }

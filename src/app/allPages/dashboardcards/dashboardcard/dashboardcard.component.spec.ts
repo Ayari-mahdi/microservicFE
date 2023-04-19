@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QUESRPSComponent } from './quesrps.component';
+import { DashboardcardComponent } from './dashboardcard.component';
 
-describe('QUESRPSComponent', () => {
-  let component: QUESRPSComponent;
-  let fixture: ComponentFixture<QUESRPSComponent>;
+describe('DashboardcardComponent', () => {
+  let component: DashboardcardComponent;
+  let fixture: ComponentFixture<DashboardcardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QUESRPSComponent ]
+      declarations: [ DashboardcardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QUESRPSComponent);
+    fixture = TestBed.createComponent(DashboardcardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

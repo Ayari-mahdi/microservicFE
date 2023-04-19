@@ -17,6 +17,8 @@ export class ModelekarasekComponent implements OnInit {
   frontorback13=""
   frontorback23=""
   classtest=""
+  classtest2=""
+  classtest3=""
   clickMessage:any;
   ngOnInit(): void {
   }
@@ -29,6 +31,9 @@ export class ModelekarasekComponent implements OnInit {
           this.frontorback22=''
           this.frontorback13=''
           this.frontorback23=''
+          this.classtest2=''
+          this.classtest3=''
+          this.classtest=''
           if(this.frontorback1=='x')
           {this.frontorback1=''}
           else{
@@ -36,7 +41,7 @@ export class ModelekarasekComponent implements OnInit {
           }
         if(this.frontorback2=='y')
           {this.frontorback2=''
-           this.classtest=''
+          
         }
           else{
             this.frontorback2='y'
@@ -48,6 +53,8 @@ export class ModelekarasekComponent implements OnInit {
         this.frontorback2=''
         this.frontorback13=''
           this.frontorback23=''
+          this.classtest=''
+          this.classtest3=''
         if(this.frontorback12=='x')
         {this.frontorback12=''
         }
@@ -55,9 +62,12 @@ export class ModelekarasekComponent implements OnInit {
           this.frontorback12='x'
         }
        if(this.frontorback22=='y')
-        {this.frontorback22=''}
+        {this.frontorback22=''
+      this.classtest2=''
+      }
         else{
           this.frontorback22='y'
+          this.classtest2='test'
         }
 
         }
@@ -66,7 +76,9 @@ export class ModelekarasekComponent implements OnInit {
           this.frontorback1=''
           this.frontorback2=''
           this.frontorback12=''
-            this.frontorback22=''
+          this.frontorback22=''
+          this.classtest=''
+          this.classtest2=''
           if(this.frontorback13=='x')
           {this.frontorback13=''
           }
@@ -74,9 +86,12 @@ export class ModelekarasekComponent implements OnInit {
             this.frontorback13='x'
           }
          if(this.frontorback23=='y')
-          {this.frontorback23=''}
+          {this.frontorback23=''
+        this.classtest3=''
+        }
           else{
             this.frontorback23='y'
+          this.classtest3='test'
           }
         }
   }

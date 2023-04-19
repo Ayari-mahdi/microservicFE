@@ -33819,7 +33819,7 @@ a:hover {
 
 .menu-item.menu-accordion.showing:not(.menu-dropdown) > .menu-link .menu-arrow:after, .menu-item.menu-accordion.show:not(.hiding):not(.menu-dropdown) > .menu-link .menu-arrow:after {
   /*rtl:ignore*/
-  transform: rotateZ(90deg);
+  transform: rotateZ(180deg);
   transition: transform 0.3s ease;
 }
 [direction=rtl] .menu-item.menu-accordion.showing:not(.menu-dropdown) > .menu-link .menu-arrow:after, [direction=rtl] .menu-item.menu-accordion.show:not(.hiding):not(.menu-dropdown) > .menu-link .menu-arrow:after {

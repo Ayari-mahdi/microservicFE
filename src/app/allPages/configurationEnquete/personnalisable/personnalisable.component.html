@@ -193,8 +193,8 @@
                                 </button>
                                 <mat-menu
                                  #actions="matMenu">
-                                <button  mat-menu-item>Action 1</button>
-                                <button  mat-menu-item>Action 2</button>
+                                <button  mat-menu-item (click)="open(content)"  >Action 1</button>
+                                <button (click)="open(content2)"  mat-menu-item>Action 2</button>
                                
                                 </mat-menu>
 
@@ -227,5 +227,50 @@
         </div>
         <!--end::Products-->
     </div>
+    <ng-template #content let-modal>
+        <div class="modal-header" style="background-color:#131010 ;border-bottom-color:#3498db;">
+          <h4 class="modal-title" id="modal-basic-title"></h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="background-color:#191919 ;">
+          <form  #userForm='ngForm' >
+           <div class="box">
+            <h1>avantage</h1>
+            <input type="text"  name="username" id="username" placeholder="avantage"  required>
+            <input type="text" name="roles" id="roles" placeholder="code avanatage"  required>
+            <input type="password"name="password" id="password" placeholder="libellé" required>
+            <button [disabled]="!userForm.form.valid" (click)="modal.close('Save click')"  type="submit" name="" value="Login">Ajouter</button>
+  
+  
+          </div>
+          </form>
+        </div>
+  
+       
+      </ng-template>
+      <ng-template #content2 let-modal>
+        <div class="modal-header" style="background-color:#191919 ;border-bottom-color:#3498db;">
+          <h4 class="modal-title" id="modal-basic-title" style="color: white;">Confirmation</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>supprimer l'avantage STARTUP-ACT!  </p>
+        </div>
+          <div class="modal-footer">
+            
+           
+            <button type="button"  (click)="modal.dismiss('Cross click')" class="btn btn-secondary">Annuler</button>
+            <button (click)="modal.close('Save click')"  type="button" name="" class="btn btn-primary" >supprimer</button>
+  
+          </div>
+       
+       
+  
+       
+      </ng-template>
     <!--end::Container-->
 </div>

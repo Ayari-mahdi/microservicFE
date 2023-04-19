@@ -16,6 +16,7 @@ export class SidenavbarComponent implements OnInit {
   style2:string="";
   style3:string="";
   style4:string="";
+  style5:string=""
   sidenavstyle:string="";
   fleshactive:string=""
   ngOnInit(): void {
@@ -23,7 +24,7 @@ export class SidenavbarComponent implements OnInit {
 
 expand(x :any){
 if(x===1){
-  this.style2="";this.style3="";this.style4="";
+  this.style2="";this.style3="";this.style4="";this.style5="";
   if(this.style1==="")
   {this.style1="show here";}
   else{
@@ -32,7 +33,7 @@ if(x===1){
 
 }
 else if (x===2){
- this.style1="";this.style3="";this.style4="";
+ this.style1="";this.style3="";this.style4="";this.style5="";
   if(this.style2==="")
   {this.style2="show here";}
   else{
@@ -41,7 +42,7 @@ else if (x===2){
 
 }
 else if (x ===3){
-  this.style2="";this.style1="";this.style4=""
+  this.style2="";this.style1="";this.style4="";this.style5="";
   if(this.style3==="")
   {this.style3="show here";}
   else{
@@ -49,11 +50,19 @@ else if (x ===3){
   }
 }
 else if (x ===4){
-  this.style2="";this.style1="";this.style3=""
+  this.style2="";this.style1="";this.style3="";this.style5="";
   if(this.style4==="")
   {this.style4="show here";}
   else{
      this.style4=""
+  }
+}
+else if (x ===5){
+  this.style2="";this.style1="";this.style3="";this.style4="";
+  if(this.style5==="")
+  {this.style5="show here";}
+  else{
+     this.style5=""
   }
 }
 }
