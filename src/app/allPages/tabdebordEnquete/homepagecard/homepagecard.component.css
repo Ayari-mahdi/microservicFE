@@ -1,0 +1,131 @@
+
+.users{       
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .users::after{
+   /* color:rgb(164, 135, 230);*/
+    color:rgb(124, 79, 228);
+    content: "\f0c0"; /* this is your text. You can also use UTF-8 character codes as I do here */
+    font-family: FontAwesome;
+    vertical-align: middle;
+    align-items: center;
+    font: normal normal normal 14px/1 FontAwesome;
+        font-size: xxx-large;
+        text-rendering: auto;
+    } 
+.citoyen{       
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+.citoyen::after{
+       /* color:rgb(164, 135, 230);*/
+        color:rgb(143, 100, 246);
+        content: "\f2bc"; /* this is your text. You can also use UTF-8 character codes as I do here */
+        font-family: FontAwesome;
+        vertical-align: middle;
+        align-items: center;
+        font: normal normal normal 14px/1 FontAwesome;
+            font-size: xxx-large;
+            text-rendering: auto;
+        } 
+.checklist{
+    background-image:url('src/assets/media/dashboard icons/check-list.png');
+}
+.survey{
+    background-image:url('src/assets/media/dashboard icons/q&a-survey.png');
+}
+.piechart{
+    background-image:url('src/assets/media/dashboard icons/pie-chart.png');
+}
+.reclamation{
+    background-image:url('src/assets/media/dashboard icons/customer-experience.png');
+}
+.municipalite{
+    background-image:url('src/assets/media/dashboard icons/customer-data.png');
+}
+
+.cardtest
+{
+position: relative;
+
+transform-style: preserve-3d;
+
+}
+.card{
+    background-color: transparent !important;
+   /* border-radius: 10px !important; */
+}
+.cardtest .face{
+    border-radius:10px !important;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transform-style:preserve-3d ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: 0.8s ease-in-out;
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.cardtest .face.front
+{
+    background: white;
+}
+/*.cardtest:hover .face.front*/
+.cardtest .face.front.x
+{   
+    transform: perspective(800px) rotateX(180deg) ;
+}
+
+.cardtest .face.back
+{
+    background: #3bc2ff;
+    color:#fff;
+    transform: perspective(800px) rotateX(180deg);
+}
+.cardtest .face.back.y
+{
+    transform: perspective(800px) rotateX(360deg);
+}
+
+ 
+.cardtest .face.back3
+{
+    background: #5ee877;
+    color:#fff;
+    transform: perspective(800px) rotateX(180deg);
+}
+.cardtest .face.back3.y
+{
+    transform: perspective(800px) rotateX(360deg);
+}
+.cardtest .face h2 
+{
+    font-size: 2em;
+    transform: perspective(800px) translateZ(100px);
+}
+
+
+
+.test
+{
+  animation: ani 1.3s forwards;
+
+}
+@keyframes ani {
+ from{
+    transform:translateY(200px)
+ } 
+  to {
+     transform:translateY(0px)
+  }
+}

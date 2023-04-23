@@ -4,3 +4,7 @@
 .sidenavclass:hover{
     width: 265px !important;
 }
+.active span.menu-arrow{
+    transform: rotateZ(180deg);
+    transition: transform 0.5s ease;
+}

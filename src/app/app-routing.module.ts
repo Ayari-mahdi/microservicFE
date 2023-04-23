@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddEnquetePersoComponent } from './allPages/configurationEnquete/add-enquete-perso/add-enquete-perso.component';
-import { AddEnqueteQVTComponent } from './allPages/configurationEnquete/add-enquete-qvt/add-enquete-qvt.component';
-import { AddEnqueteRPSComponent } from './allPages/configurationEnquete/add-enquete-rps/add-enquete-rps.component';
-import { PersonnalisableComponent } from './allPages/configurationEnquete/personnalisable/personnalisable.component';
-import { QVTComponent } from './allPages/configurationEnquete/qvt/qvt.component';
-import { RPSComponent } from './allPages/configurationEnquete/rps/rps.component';
+import { CitoyenComponent } from './allPages/Microservices/citoyen/citoyen.component';
+import { MunicipaliteComponent } from './allPages/Microservices/municipalite/municipalite.component';
+import { ReclamationComponent } from './allPages/Microservices/reclamation/reclamation.component';
+import { ServicesComponent } from './allPages/Microservices/services/services.component';
+import { UsersComponent } from './allPages/Microservices/users/users.component';
+
 import { PageswrapperComponent } from './allPages/pageswrapper/pageswrapper.component';
-import { ModelekarasekComponent } from './allPages/tabdebordEnquete/modelekarasek/modelekarasek.component';
+import { HomepageComponent } from './allPages/tabdebordEnquete/homepage/homepage.component';
 import { AuthComponent } from './Auth/auth.component';
 import { LoginComponent } from './Auth/login/login.component';
 import { RegisterComponent } from './Auth/register/register.component';
@@ -21,30 +21,27 @@ const routes: Routes = [
   {path:'pages',component:PageswrapperComponent,
   children : [
     { 
-      path: '',component:ModelekarasekComponent
+      path: '',redirectTo:'homepage',pathMatch:'full'
     },
     { 
-      path: 'configurationQVT',component:QVTComponent   
+      path: 'homepage',component:HomepageComponent
     },
     { 
-      path: 'configurationRPS',component:RPSComponent   
+      path: 'users',component:UsersComponent
+    },
+   
+    { 
+      path: 'citoyen',component:CitoyenComponent
     },
     { 
-      path: 'configurationPerso',component:PersonnalisableComponent   
+      path: 'municipalite',component:MunicipaliteComponent
     },
     { 
-      path: 'addEnqueteQVT',component:AddEnqueteQVTComponent
-    },
-
-  { 
-      path: 'addEnqueteRPS',component:AddEnqueteRPSComponent
+      path: 'services',component:ServicesComponent
     },
     { 
-      path: 'addEnquetePerso',component:AddEnquetePersoComponent
-    },
-    { 
-      path: 'modelekarasek',component:ModelekarasekComponent
-    },
+      path: 'reclamation',component:ReclamationComponent
+    },    
    
   ]
 },

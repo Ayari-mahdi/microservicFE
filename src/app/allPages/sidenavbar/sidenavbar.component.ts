@@ -23,48 +23,7 @@ export class SidenavbarComponent implements OnInit {
   }
 
 expand(x :any){
-if(x===1){
-  this.style2="";this.style3="";this.style4="";this.style5="";
-  if(this.style1==="")
-  {this.style1="show here";}
-  else{
-     this.style1=""
-  }
 
-}
-else if (x===2){
- this.style1="";this.style3="";this.style4="";this.style5="";
-  if(this.style2==="")
-  {this.style2="show here";}
-  else{
-     this.style2=""
-  }
-
-}
-else if (x ===3){
-  this.style2="";this.style1="";this.style4="";this.style5="";
-  if(this.style3==="")
-  {this.style3="show here";}
-  else{
-     this.style3=""
-  }
-}
-else if (x ===4){
-  this.style2="";this.style1="";this.style3="";this.style5="";
-  if(this.style4==="")
-  {this.style4="show here";}
-  else{
-     this.style4=""
-  }
-}
-else if (x ===5){
-  this.style2="";this.style1="";this.style3="";this.style4="";
-  if(this.style5==="")
-  {this.style5="show here";}
-  else{
-     this.style5=""
-  }
-}
 }
 changesidenav(){
   if(this.sidenavstyle==="")

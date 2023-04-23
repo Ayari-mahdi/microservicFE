@@ -4,3 +4,25 @@
 .survey{
     background-image:url('src/assets/media/dashboard icons/q&a-survey.png');
 }
+.piechart{
+    background-image:url('src/assets/media/dashboard icons/pie-chart.png');
+}
+.reclamation{
+    background-image:url('src/assets/media/dashboard icons/customer-experience.png');
+}
+.users{       
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.users::after{
+color:rgb(164, 135, 230);
+content: "\f0c0"; /* this is your text. You can also use UTF-8 character codes as I do here */
+font-family: FontAwesome;
+vertical-align: middle;
+align-items: center;
+font: normal normal normal 14px/1 FontAwesome;
+    font-size: xxx-large;
+    text-rendering: auto;
+} 

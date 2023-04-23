@@ -26,18 +26,18 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { PageswrapperComponent } from './allPages/pageswrapper/pageswrapper.component';
 import { SidenavbarComponent } from './allPages/sidenavbar/sidenavbar.component';
 import { HeaderComponent } from './allPages/header/header.component';
-import { QVTComponent } from './allPages/configurationEnquete/qvt/qvt.component';
-import { RPSComponent } from './allPages/configurationEnquete/rps/rps.component';
-import { PersonnalisableComponent } from './allPages/configurationEnquete/personnalisable/personnalisable.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatRippleModule} from '@angular/material/core';
-import { AddEnqueteQVTComponent } from './allPages/configurationEnquete/add-enquete-qvt/add-enquete-qvt.component';
-import { AddEnqueteRPSComponent } from './allPages/configurationEnquete/add-enquete-rps/add-enquete-rps.component';
-import { AddEnquetePersoComponent } from './allPages/configurationEnquete/add-enquete-perso/add-enquete-perso.component';
-import { ModelekarasekComponent } from './allPages/tabdebordEnquete/modelekarasek/modelekarasek.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardcardComponent } from './allPages/dashboardcards/dashboardcard/dashboardcard.component';
+import { HomepageComponent } from './allPages/tabdebordEnquete/homepage/homepage.component';
+import { HomepagecardComponent } from './allPages/tabdebordEnquete/homepagecard/homepagecard.component';
+import { UsersComponent } from './allPages/Microservices/users/users.component';
+import { MunicipaliteComponent } from './allPages/Microservices/municipalite/municipalite.component';
+import { CitoyenComponent } from './allPages/Microservices/citoyen/citoyen.component';
+import { ServicesComponent } from './allPages/Microservices/services/services.component';
+import { ReclamationComponent } from './allPages/Microservices/reclamation/reclamation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,14 +49,14 @@ import { DashboardcardComponent } from './allPages/dashboardcards/dashboardcard/
     PageswrapperComponent,
     SidenavbarComponent,
     HeaderComponent,
-    QVTComponent,
-    RPSComponent,
-    PersonnalisableComponent,
-    AddEnqueteQVTComponent,
-    AddEnqueteRPSComponent,
-    AddEnquetePersoComponent,
-    ModelekarasekComponent,
     DashboardcardComponent,
+    HomepageComponent,
+    HomepagecardComponent,
+    UsersComponent,
+    MunicipaliteComponent,
+    CitoyenComponent,
+    ServicesComponent,
+    ReclamationComponent,
     
   ],
   imports: [
