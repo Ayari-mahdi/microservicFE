@@ -38,6 +38,12 @@ import { MunicipaliteComponent } from './allPages/Microservices/municipalite/mun
 import { CitoyenComponent } from './allPages/Microservices/citoyen/citoyen.component';
 import { ServicesComponent } from './allPages/Microservices/services/services.component';
 import { ReclamationComponent } from './allPages/Microservices/reclamation/reclamation.component';
+import { AdduserComponent } from './allPages/Microservices/users/adduser/adduser.component';
+import { AddserviceComponent } from './allPages/Microservices/services/addservice/addservice.component';
+import { AddmunicipaliteComponent } from './allPages/Microservices/municipalite/addmunicipalite/addmunicipalite.component';
+import { AddcitoyenComponent } from './allPages/Microservices/citoyen/addcitoyen/addcitoyen.component';
+import { AddlandingserviceComponent } from './Landing/addlandingservice/addlandingservice.component';
+import { AddlandingreclamationComponent } from './Landing/addlandingreclamation/addlandingreclamation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +63,12 @@ import { ReclamationComponent } from './allPages/Microservices/reclamation/recla
     CitoyenComponent,
     ServicesComponent,
     ReclamationComponent,
+    AdduserComponent,
+    AddserviceComponent,
+    AddmunicipaliteComponent,
+    AddcitoyenComponent,
+    AddlandingserviceComponent,
+    AddlandingreclamationComponent,
     
   ],
   imports: [

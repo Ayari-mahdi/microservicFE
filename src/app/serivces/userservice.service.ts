@@ -11,7 +11,7 @@ user!:user;
 authlink= "http://localhost:8089/user/authenticate";
 reglink="http://localhost:8089/user/registrate";
 deletelink="http://localhost:8089/user/delete/";
-getall="http://localhost:8089/user/allUsers";
+getall="http://localhost:8089/user/AllUsers";
 getuser="http://localhost:8089/user/";
 newpwdlink="http://localhost:8089/user/newpassword/";
 updatelink="http://localhost:8089/user/update";

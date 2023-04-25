@@ -13,19 +13,13 @@
             <!--begin::Illustration-->
             <div class="h-50 flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-center card-rounded-bottom" 
             [ngClass]="logo"
-            
            ></div>
-            <!--   end::Illustration
-            </div>-->
-            <!--end::Heading-->
-            <!--begin::Links-->
             <div class="text-center h-25 pt-3">
-                <!--begin::Link-->
-                <a class="btn btn-sm btn-primary me-2" data-bs-target="#kt_modal_new_address" routerLink="/pages/configurationQVT"
-                 data-bs-toggle="modal">Lancement</a>
-              
 
-                <!--end::Link-->
+                <a *ngIf="title==='Services'" (click)="open(Service)"  class="btn btn-sm btn-primary me-2" data-bs-target="#kt_modal_new_address" 
+                 data-bs-toggle="modal">Lancement</a>
+                 <a *ngIf="title==='Reclamation'" (click)="open(Reclamation)"  class="btn btn-sm btn-primary me-2" data-bs-target="#kt_modal_new_address" 
+                 data-bs-toggle="modal">Lancement</a>
             </div>
             <!--end::Links-->
         </div>
@@ -33,3 +27,10 @@
     </div>
     <!--end::Engage widget 1-->
 </div>
+
+<ng-template #Service let-modal>
+<app-addlandingservice (closeEvent)="close()"></app-addlandingservice>
+  </ng-template>
+  <ng-template #Reclamation let-modal>
+<app-addlandingreclamation (closeEvent)="close()"></app-addlandingreclamation>
+  </ng-template>

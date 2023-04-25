@@ -7,7 +7,8 @@
     }
     .users::after{
    /* color:rgb(164, 135, 230);*/
-    color:rgb(124, 79, 228);
+   /* color:rgb(124, 79, 228);*/
+ color:#009EF7;
     content: "\f0c0"; /* this is your text. You can also use UTF-8 character codes as I do here */
     font-family: FontAwesome;
     vertical-align: middle;
@@ -24,7 +25,7 @@
         }
 .citoyen::after{
        /* color:rgb(164, 135, 230);*/
-        color:rgb(143, 100, 246);
+        color:#009EF7;
         content: "\f2bc"; /* this is your text. You can also use UTF-8 character codes as I do here */
         font-family: FontAwesome;
         vertical-align: middle;
