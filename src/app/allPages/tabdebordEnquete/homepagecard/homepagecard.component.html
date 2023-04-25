@@ -1,33 +1,16 @@
 
-    <!--begin::Engage widget 1-->
-                        <div  class="card cardstyle2 cardtest">
-                            <!--begin::Body-->
-                            <div   matRipple
-                            [matRippleRadius]="300" id="2" (click)="onshow($event)" [ngClass]="frontorback12"  class="face front card-body d-flex flex-column flex-center py-5">
-                                <!--begin::Heading-->
-                               
-                                <div class="mb-2 h-100">
-                                    <!--begin::Title-->
-                                    <h1 class="mb-0 h-25 fw-bold text-gray-800 text-center lh-lg">{{title}}
-                                <!-- <br />new 
-                                    <span class="fw-boldest">Invoice Manager?</span>
-                                    end::Title--></h1>
-                                    <!--begin::Illustration-->
+<div  class="card cardstyle2 cardtest">
+     <div   matRipple
+     [matRippleRadius]="300" id="2" (click)="onshow($event)" [ngClass]="frontorback12"  class="face front card-body d-flex flex-column flex-center py-5">
+        <div class="mb-2 h-100">
+                                    <h1 class="mb-0 h-25 fw-bold text-gray-800 text-center lh-lg">{{title}}</h1>
                                     <div class="h-50 flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-center card-rounded-bottom"
                                     [ngClass]="icon"></div>
-                                <!--   end::Illustration
-                                </div>-->
-                                <!--end::Heading-->
-                                <!--begin::Links-->
                                 <div class="text-center h-25 pt-3">
                                     <!--begin::Link-->
                                     <a style="min-width: 90px;" class="btn btn-sm btn-primary me-2" data-bs-target="#kt_modal_new_address" 
                                     routerLink={{link}}
                                     data-bs-toggle="modal">Lancement</a>
-                                    <!--end::Link-->
-                                    <!--begin::Link-->
-                                   
-                                    <!--end::Link-->
                                 </div>
                                 <!--end::Links-->
                             </div>
@@ -42,7 +25,7 @@
             <h1 class="mb-0 h-25 fw-bold text-gray-800 text-center lh-lg">{{title}}</h1>
         </div>
         <div class="d-flex  justify-content-around "  >
-        <div *ngIf="title!='Reclamation'" style="width: 90px;" class="btn btn-sm btn-light buttons" routerLink={{link1}}>Add</div>
+        <div *ngIf="title!='Reclamation'" style="width: 90px;" class="btn btn-sm btn-light buttons" (click)="open(content)">Add</div>
         <div  style="width: 90px;" class="btn btn-sm btn-light buttons" routerLink={{link2}}>List</div>
 
         </div>  
@@ -51,4 +34,8 @@
       
     </div>
     </div>
+    <ng-template  #content let-modal >
+           <app-adduser [updateoradd]="'add'" [title]="'add new user'" (closeEvent)="close()" ></app-adduser> 
+    </ng-template>
+
 
