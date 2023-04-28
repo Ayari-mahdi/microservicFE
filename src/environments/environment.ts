@@ -3,8 +3,33 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+
+  apiHost: 'http://localhost:8762/',
+    /**user */
+  authuser:'user/authenticate',
+  reguser:'user/registrate',
+  deleteuser:'user/delete/',
+  getuser:'user/',
+  getallusers:'user/AllUsers',
+  newpwdlink:'user/newpassword/',
+  updateuser:'user/update',
+  /**service */
+  getallservices:'service/Get-All-Service',
+  getservice:'service/Get-Service/',
+  addservice:'service/addService',
+  deleteservice:'service/remove-Service/',
+  /**citoyen */
+  getallcitoyen:'citoyen/retrieve-all-citoyens',
+  getcitoyen:'citoyen/retrieve-citoyen-id/',
+  getcitoyenbycin:'citoyen/retrieve-citoyen-cin/',
+  addcitoyen:'citoyen/add-citoyen',
+  removecitoyen:'citoyen/remove-contrat/',
+  updatecitoyen:'citoyen/update-contrat',
+  /**municipalite */
+  /**reclamation */
+
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

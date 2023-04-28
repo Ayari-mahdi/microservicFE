@@ -11,7 +11,7 @@ import { UserserviceService } from 'src/app/serivces/userservice.service';
 export class UsersComponent implements OnInit {
   users: user[] = [];
   closeResult='';
- totalnumber='';
+ totalnumber='0';
   constructor( private modalService : NgbModal,
     private userservice: UserserviceService,
     ) { }

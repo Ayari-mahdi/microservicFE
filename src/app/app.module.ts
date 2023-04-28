@@ -29,7 +29,7 @@ import { HeaderComponent } from './allPages/header/header.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatRippleModule} from '@angular/material/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardcardComponent } from './allPages/dashboardcards/dashboardcard/dashboardcard.component';
 import { HomepageComponent } from './allPages/tabdebordEnquete/homepage/homepage.component';
 import { HomepagecardComponent } from './allPages/tabdebordEnquete/homepagecard/homepagecard.component';
@@ -39,11 +39,12 @@ import { CitoyenComponent } from './allPages/Microservices/citoyen/citoyen.compo
 import { ServicesComponent } from './allPages/Microservices/services/services.component';
 import { ReclamationComponent } from './allPages/Microservices/reclamation/reclamation.component';
 import { AdduserComponent } from './allPages/Microservices/users/adduser/adduser.component';
-import { AddserviceComponent } from './allPages/Microservices/services/addservice/addservice.component';
 import { AddmunicipaliteComponent } from './allPages/Microservices/municipalite/addmunicipalite/addmunicipalite.component';
 import { AddcitoyenComponent } from './allPages/Microservices/citoyen/addcitoyen/addcitoyen.component';
 import { AddlandingserviceComponent } from './Landing/addlandingservice/addlandingservice.component';
 import { AddlandingreclamationComponent } from './Landing/addlandingreclamation/addlandingreclamation.component';
+import {MatProgressBarModule } from '@angular/material/progress-bar'
+import { InterceptorService } from './serivces/interceptor/interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,6 @@ import { AddlandingreclamationComponent } from './Landing/addlandingreclamation/
     ServicesComponent,
     ReclamationComponent,
     AdduserComponent,
-    AddserviceComponent,
     AddmunicipaliteComponent,
     AddcitoyenComponent,
     AddlandingserviceComponent,
@@ -93,9 +93,12 @@ import { AddlandingreclamationComponent } from './Landing/addlandingreclamation/
     NgxCaptchaModule,
     MatMenuModule,
     MatPaginatorModule,
-    MatRippleModule
+    MatRippleModule,
+    MatProgressBarModule,
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MunicipaliteService } from './municipalite.service';
+import { InterceptorService } from './interceptor.service';
 
-describe('MunicipaliteService', () => {
-  let service: MunicipaliteService;
+describe('InterceptorService', () => {
+  let service: InterceptorService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MunicipaliteService);
+    service = TestBed.inject(InterceptorService);
   });
 
   it('should be created', () => {
