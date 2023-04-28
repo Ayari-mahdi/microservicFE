@@ -32,3 +32,36 @@ export class service{
         this.commentaireService=''
     }
 }
+export class citoyen{
+    id!:number;
+    nom:string;
+    prenom:string;
+    email:string;
+    telephone:number;
+    cin:string;
+    municipName:string;
+    constructor(){
+        this.nom=''
+        this.prenom=''
+        this.email=''
+        this.telephone=0
+        this.cin=''
+        this.municipName=''
+    }
+
+}
+export class municipalite{
+    id!:number;
+    nom:string;
+
+    email:string;
+    telephone:number;
+    adresse:string;
+    constructor(){
+        this.nom=''
+        this.email=''
+        this.telephone=0
+        this.adresse=''
+    }
+
+}

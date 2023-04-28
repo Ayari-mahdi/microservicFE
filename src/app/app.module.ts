@@ -45,6 +45,7 @@ import { AddlandingserviceComponent } from './Landing/addlandingservice/addlandi
 import { AddlandingreclamationComponent } from './Landing/addlandingreclamation/addlandingreclamation.component';
 import {MatProgressBarModule } from '@angular/material/progress-bar'
 import { InterceptorService } from './serivces/interceptor/interceptor.service';
+import { ListcitoyeninmunicipComponent } from './allPages/Microservices/municipalite/listcitoyeninmunicip/listcitoyeninmunicip/listcitoyeninmunicip.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +70,7 @@ import { InterceptorService } from './serivces/interceptor/interceptor.service';
     AddcitoyenComponent,
     AddlandingserviceComponent,
     AddlandingreclamationComponent,
+    ListcitoyeninmunicipComponent,
     
   ],
   imports: [

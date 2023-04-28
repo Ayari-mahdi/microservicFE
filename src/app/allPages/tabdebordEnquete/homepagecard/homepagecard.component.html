@@ -25,7 +25,9 @@
             <h1 class="mb-0 h-25 fw-bold text-gray-800 text-center lh-lg">{{title}}</h1>
         </div>
         <div class="d-flex  justify-content-around "  >
-        <div *ngIf="title!='Reclamation'" style="width: 90px;" class="btn btn-sm btn-light buttons" (click)="open(content)">Add</div>
+        <div *ngIf=" title==='Utilisateurs'" style="width: 90px;" class="btn btn-sm btn-light buttons" (click)="open(content)">Add</div>
+        <div *ngIf=" title==='Citoyen'" style="width: 90px;" class="btn btn-sm btn-light buttons" (click)="open(content2)">Add</div>
+        <div *ngIf="title==='Municipalité'" style="width: 90px;" class="btn btn-sm btn-light buttons" (click)="open(content3)">Add</div>
         <div  style="width: 90px;" class="btn btn-sm btn-light buttons" routerLink={{link2}}>List</div>
 
         </div>  
@@ -37,5 +39,12 @@
     <ng-template  #content let-modal >
            <app-adduser [updateoradd]="'add'" [title]="'add new user'" (closeEvent)="close()" ></app-adduser> 
     </ng-template>
+    <ng-template  #content2 let-modal >
+        <app-addcitoyen [updateoradd]="'add'" [title]="'add new citoyen'" (closeEvent)="close()" ></app-addcitoyen> 
+ </ng-template>
+ <ng-template  #content3 let-modal >
+    <app-addmunicipalite [updateoradd]="'add'" [title]="'add new Municipalité'" (closeEvent)="close()" ></app-addmunicipalite> 
+</ng-template>
+
 
 

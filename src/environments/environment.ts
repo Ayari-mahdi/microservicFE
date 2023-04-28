@@ -26,6 +26,12 @@ export const environment = {
   removecitoyen:'citoyen/remove-contrat/',
   updatecitoyen:'citoyen/update-contrat',
   /**municipalite */
+  getallmunicip:'Municipalite/getAll',
+  getmunicip:'Municipalite/getOne/',
+  addmunicip:'Municipalite/AddMunicip',
+  deleteMunicip:'Municipalite/delete/',
+  updateMunicip:'Municipalite/update',
+  getByNameMunicip:'Municipalite/getbyName/',
   /**reclamation */
 
 };
