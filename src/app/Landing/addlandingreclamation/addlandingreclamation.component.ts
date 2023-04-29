@@ -19,6 +19,15 @@ private muniservice:MunicipaliteService
   ) {this.rec=new reclamation }
   spinner=false
   ngOnInit(): void {
+    this.muniservice.getAll().subscribe({
+      next:(data)=>{
+     console.log(data)
+       this.municipalites=data
+      },
+      error:(error)=>{
+        console.log(error)
+      }
+    })
   }
   closemodal() {
     this.closeEvent.emit();
@@ -26,15 +35,6 @@ private muniservice:MunicipaliteService
   submit(){
     console.log(this.rec)
   this.spinner=true
-  this.muniservice.getAll().subscribe({
-    next:(data)=>{
-   console.log(data)
-     this.municipalites=data
-    },
-    error:(error)=>{
-      console.log(error)
-    }
-  })
   this.recservice.addReclamation(this.rec).subscribe({
   next:(data)=>{
     this.spinner=false
