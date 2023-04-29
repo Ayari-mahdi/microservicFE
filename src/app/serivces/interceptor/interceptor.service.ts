@@ -25,7 +25,7 @@ token=''
     })*/
     
 
-    if(req.method==="POST"){
+    /*if(req.method==="POST"){
       
       req=req.clone({
         setHeaders: {
@@ -33,7 +33,7 @@ token=''
          'Access-Control-Allow-Origin':'*',
          'Content-Type': 'application/json',
        }
-    })}
+    })}*/
     console.log("testint interceptor",req)
     return next.handle(req)
   }
