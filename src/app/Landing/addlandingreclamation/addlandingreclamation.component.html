@@ -71,7 +71,7 @@
                                     #municipalite="ngModel"
                                 >
                                     
-                                    <option *ngFor="let municipalite of municipalites"  value={{municipalite.nom}}>{{municipalite.nom}}</option>
+                                    <option *ngFor="let municipalite of municipalites"  [value]="municipalite.nom">{{municipalite.nom}}</option>
                                   
                                 </select>
                                 <!--end::Select-->

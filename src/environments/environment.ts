@@ -5,6 +5,7 @@
 export const environment = {
 
   apiHost: 'http://localhost:8762/',
+  apiHostrec: 'http://localhost:3000/',
     /**user */
   authuser:'user/authenticate',
   reguser:'user/registrate',
