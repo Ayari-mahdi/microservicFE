@@ -4,6 +4,7 @@
         <h3 class="card-title align-items-start flex-column">
             <span class="card-label fw-bolder fs-3 mb-1">Reclamation table</span>
             <span class="text-muted mt-1 fw-bold fs-7">{{totalnumber}} reclamation</span>
+        
         </h3>
     </div>
     <!--end::Header-->
@@ -21,7 +22,8 @@
                         <th class="min-w-140px">email</th>
                         <th class="min-w-120px">title</th>
                         <th class="min-w-140px">municipalité<th>
-                        <th class="min-w-120px">description/th>
+                        <th class="min-w-120px">description</th>
+                        <th class="min-w-120px">status</th>
                         <th class="min-w-100px text-end">Actions</th>
                     </tr>
                 </thead>
@@ -43,6 +45,19 @@
                         </td>
                         <td>
                             <span class="fw-bold text-dark d-block fs-7">{{reclamation.description}}</span>
+                        </td>
+                        <td>
+
+                            <span *ngIf="reclamation.traiter=== true" class="badge badge-light-success">traite</span>
+                            <span *ngIf="reclamation.traiter===false" class="badge badge-light-warning ">In Progress</span>
+                            <label class="form-check form-switch form-check-custom form-check-solid">
+                                <!--begin::Input-->
+                                <input (click)="update(reclamation.id,reclamation.traiter)"  class="form-check-input" id="traiter" name="traiter" type="checkbox" value="1" checked="checked" />
+                                <!--end::Input-->
+                                <!--begin::Label-->
+                                <span class="form-check-label fw-bold text-muted">Yes</span>
+                                <!--end::Label-->
+                            </label>
                         </td>
                         <td class="text-end">
                             <a (click)="open(deletemodal)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">

@@ -34,6 +34,17 @@ totalnumber='0'
      ;
     });
    }
+   update(id:any,re:any){
+  
+    this.recservice.update(id,{"traiter":!re}).subscribe({
+      next:(data)=>{ 
+        console.log("data : ",data)
+        this.close()
+      },
+      error:(err)=>{console.log(err)
+      }
+    })
+   }
    close(){
     this.modalService.dismissAll();
     this.ngOnInit()

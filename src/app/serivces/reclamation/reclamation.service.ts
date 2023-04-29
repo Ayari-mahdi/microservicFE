@@ -21,7 +21,7 @@ export class ReclamationService {
     delete(recid: any):Observable<[]>{
      return this.http.delete<[]>(environment.apiHost+environment.reclamation+recid)
     }
-    update(rec: any):Observable<[]>{
-      return this.http.put<[]>(environment.apiHost+environment.reclamation+rec.id,rec)
+    update(id:any ,rec: any):Observable<[]>{
+      return this.http.put<[]>(environment.apiHost+environment.reclamation+id,rec)
      }
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { reclamation } from 'src/app/Models/models';
+import { municipalite, reclamation } from 'src/app/Models/models';
+import { MunicipaliteService } from 'src/app/serivces/municipalite/municipalite.service';
 import { ReclamationService } from 'src/app/serivces/reclamation/reclamation.service';
 
 @Component({
@@ -10,8 +11,10 @@ import { ReclamationService } from 'src/app/serivces/reclamation/reclamation.ser
 export class AddlandingreclamationComponent implements OnInit {
   @Output() closeEvent = new EventEmitter<string>();
  rec:reclamation;
+ municipalites:municipalite[]=[]
   constructor(
-private recservice:ReclamationService
+private recservice:ReclamationService,
+private muniservice:MunicipaliteService
 
   ) {this.rec=new reclamation }
   spinner=false
@@ -23,6 +26,15 @@ private recservice:ReclamationService
   submit(){
     console.log(this.rec)
   this.spinner=true
+  this.muniservice.getAll().subscribe({
+    next:(data)=>{
+   console.log(data)
+     this.municipalites=data
+    },
+    error:(error)=>{
+      console.log(error)
+    }
+  })
   this.recservice.addReclamation(this.rec).subscribe({
   next:(data)=>{
     this.spinner=false

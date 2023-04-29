@@ -72,12 +72,17 @@ export class reclamation{
     municipalite:string;
     title:string;
     description:string;
+    traiter:boolean
     constructor(){
         this.nom=''
         this.email=''
         this.municipalite=''
         this.title=''
         this.description=''
+        this.traiter=false;
     }
-
+}
+export class recresponse{
+    traiter:boolean
+    constructor(){this.traiter=false}
 }
