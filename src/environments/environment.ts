@@ -33,6 +33,7 @@ export const environment = {
   updateMunicip:'Municipalite/update',
   getByNameMunicip:'Municipalite/getbyName/',
   /**reclamation */
+  reclamation:'API/MS-Reclamation/',
 
 };
 

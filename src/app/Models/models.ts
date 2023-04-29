@@ -65,3 +65,19 @@ export class municipalite{
     }
 
 }
+export class reclamation{
+    id!:number;
+    nom:string;
+    email:string;
+    municipalite:string;
+    title:string;
+    description:string;
+    constructor(){
+        this.nom=''
+        this.email=''
+        this.municipalite=''
+        this.title=''
+        this.description=''
+    }
+
+}

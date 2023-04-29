@@ -4,14 +4,14 @@
         <!--begin::Modal content-->
         <div class="modal-content">
             <!--begin::Form-->
-            <form class="form" id="kt_modal_new_address_form"
+            <form  #serviceform='ngForm' class="form" id="kt_modal_new_address_form"
             (ngSubmit)="submit()"
             
             >
                 <!--begin::Modal header-->
                 <div class="modal-header" id="kt_modal_new_address_header">
                     <!--begin::Modal title-->
-                    <h2>Reclamation</h2>
+                    <h2>Serivces</h2>
                     <!--end::Modal title-->
                     <!--begin::Close-->
                     <div (click)="closemodal()"  class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
@@ -29,86 +29,67 @@
                             <div class="d-flex flex-column mb-5 fv-row">
                                 <label class="required fs-5 fw-bold mb-2">name</label>
                                 <input type="text" class="form-control form-control-solid" placeholder="" 
-                                name="name" id="name"
+                                name="nom" id="nom"
+                                [(ngModel)]="rec.nom"
+                                #nom="ngModel"
                                 autocomplete="off" 
                               
                                 />
                             </div>
-                        <div class="d-flex flex-column mb-5 fv-row">
-                            <!--begin::Label-->
-                            <label class="required fs-5 fw-bold mb-2">user cin</label>
-
-                            <input  class="form-control form-control-solid" placeholder="" 
-                            name="userCin" id="userCin"
-                     autocomplete="on" 
-                 
-                            
-                            />
-                            <!--end::Input-->
-                        </div>
-                        <div class="d-flex flex-column mb-5 fv-row">
-                            <!--begin::Label-->
-                            <label class="required fs-5 fw-bold mb-2">Email</label>
-
-                            <input class="form-control form-control-solid" placeholder="" 
-                            name="email" id="email"
-                     autocomplete="on" 
-                    
-                            
-                            />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
-                        <div class="d-flex flex-column mb-5 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">Role</span>
-                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Your payment statements may very based on selected country"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Select-->
-                            <select  data-control="select2" data-dropdown-parent="#kt_modal_new_address" data-placeholder="Select a Country..." class="form-select form-select-solid"
-                            name="role" id="role"
-                                autocomplete="on" 
-                                
-                            >
-                                
-                                <option value="admin">admin</option>
-                                <option value="user">user</option>
-
+                            <div class="d-flex flex-column mb-5 fv-row">
+                                <label class="required fs-5 fw-bold mb-2">email</label>
+                                <input type="text" class="form-control form-control-solid" placeholder="" 
+                                name="email" id="email"
+                                [(ngModel)]="rec.email"
+                                #email="ngModel"
+                                autocomplete="off" 
                               
-                            </select>
-                            <!--end::Select-->
-                        </div>
-
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-5 mt-20">
-                            <!--begin::Wrapper-->
-                            <div class="d-flex flex-stack">
-                                <!--begin::Label-->
-                                <div class="me-5">
-                                    <!--begin::Label-->
-                                    <label class="fs-5 fw-bold">activate account</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <div class="fs-7 fw-bold text-dark">Activate account </div>
-                                    <!--end::Input-->
-                                </div>
-                                <!--end::Label-->
-                                <!--begin::Switch-->
-                                <label class="form-check form-switch form-check-custom form-check-solid">
-                                    <!--begin::Input-->
-                                    <input class="form-check-input" name="billing" type="checkbox" value="1" checked="checked" />
-                                    <!--end::Input-->
-                                    <!--begin::Label-->
-                                    <span class="form-check-label fw-bold text-muted">Yes</span>
-                                    <!--end::Label-->
-                                </label>
-                                <!--end::Switch-->
+                                />
                             </div>
-                            <!--begin::Wrapper-->
+                            <div class="d-flex flex-column mb-5 fv-row">
+                                <label class="required fs-5 fw-bold mb-2">title</label>
+                                <input type="text" class="form-control form-control-solid" placeholder="" 
+                                name="title" id="title"
+                                [(ngModel)]="rec.title"
+                                #title="ngModel"
+                                autocomplete="off" 
+                              
+                                />
+                            </div>
+                            <div class="d-flex flex-column mb-5 fv-row">
+                                <!--begin::Label-->
+                                <label class="d-flex align-items-center fs-5 fw-bold mb-2">
+                                    <span class="required">Municipalité</span>
+                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Your payment statements may very based on selected country"></i>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Select-->
+                                <select  data-control="select2" data-dropdown-parent="#kt_modal_new_address" data-placeholder="Select a Country..." class="form-select form-select-solid"
+                                name="municipalite" id="municipalite"
+                                    autocomplete="on" 
+                                    [(ngModel)]="rec.municipalite"
+                                    #municipalite="ngModel"
+                                >
+                                    
+                                    <option value="manouba">manouba</option>
+                                    <option value="ariana">araian</option>
+                                    <option value="tunis">tunis</option>
+                                  
+                                </select>
+                                <!--end::Select-->
+                            </div>
+                        <div class="d-flex flex-column mb-5 fv-row">
+                            <!--begin::Label-->
+                            <label class="required fs-5 fw-bold mb-2">description</label>
+                            <textarea class="form-control form-control-solid" rows="3"
+                             name="description" id="description"
+                             [(ngModel)]="rec.description"
+                             #description="ngModel"
+                             placeholder="commentaire" 
+                             style="height: 170px;">
+                            </textarea>
+                            
                         </div>
-                        <!--end::Input group-->
                     </div>
                     <!--end::Scroll-->
                 </div>
@@ -119,12 +100,12 @@
                     <button (click)="closemodal()" type="reset" id="kt_modal_new_address_cancel" class="btn btn-light me-3">Discard</button>
                     <!--end::Button(click)="modal.dismiss('Cross click')"-->
                     <!--begin::Button-->
-                    <button  type="submit" id="kt_modal_new_address_submit" class="btn btn-primary">
+                    <button   type="submit" id="kt_modal_new_address_submit" class="btn btn-primary">
                         <span class="indicator-label">Submit</span>
                        
                     </button>
                     
-                             <span *ngIf="spinner"   >Please wait... 
+                             <span  *ngIf="spinner"  >Please wait... 
                               <span  class="spinner-border spinner-border-sm align-middle ms-2"></span></span> 
                              </div>
                     <!--end::Button-->
@@ -135,3 +116,4 @@
         </div>
     </div>
 </div>
+
