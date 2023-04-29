@@ -6,18 +6,24 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InterceptorService implements HttpInterceptor{
-token=''
+token:any=''
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log("testint interceptor",req)
-    const tok=localStorage.getItem("token")
+    const tok=sessionStorage.getItem("token")
+    console.log(tok)
+    
      if(tok!==null){
-     this.token=tok
+
+     
+     var obj = JSON.parse(tok);
+     this.token=obj.jwt
+console.log(obj.jwt); 
     }
-  
-    /*const req2=req.clone({
+  console.log(this.token)
+    req=req.clone({
          headers:req.headers.set('Authorization',this.token),
-    })*/
+    })
     /* req=req.clone({
      setHeaders: {
       'Access-Control-Allow-Origin':'*'
