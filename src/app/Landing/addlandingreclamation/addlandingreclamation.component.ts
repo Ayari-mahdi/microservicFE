@@ -33,7 +33,7 @@ private muniservice:MunicipaliteService
     this.closeEvent.emit();
   }
   submit(){
-    console.log(this.rec)
+  console.log(this.rec)
   this.spinner=true
   this.recservice.addReclamation(this.rec).subscribe({
   next:(data)=>{

@@ -65,17 +65,17 @@ export class municipalite{
     }
 
 }
-export class reclamation{
-    id!:number;
-    nom:string;
-    email:string;
+export class reclamation{ 
+    _id!:number;
+    nomuser:string;
+    emailuser:string;
     municipalite:string;
     title:string;
     description:string;
     traiter:boolean
     constructor(){
-        this.nom=''
-        this.email=''
+        this.nomuser=''
+        this.emailuser=''
         this.municipalite=''
         this.title=''
         this.description=''

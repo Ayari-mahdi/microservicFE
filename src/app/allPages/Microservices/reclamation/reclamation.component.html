@@ -17,12 +17,12 @@
                 <!--begin::Table head-->
                 <thead>
                     <tr class="fw-bolder text-muted">
-                       
                         <th class="min-w-150px">nom</th>
                         <th class="min-w-140px">email</th>
                         <th class="min-w-120px">title</th>
-                        <th class="min-w-140px">municipalité<th>
+                        <th class="min-w-140px">municipalité</th>
                         <th class="min-w-120px">description</th>
+                        <th class="min-w-120px">status</th>
                         <th class="min-w-120px">status</th>
                         <th class="min-w-100px text-end">Actions</th>
                     </tr>
@@ -32,10 +32,10 @@
                 <tbody>
                     <tr  *ngFor="let reclamation of recs " >                   
                         <td>
-                            <a class="text-dark fw-bolder text-hover-primary fs-6">{{reclamation.nom}}</a>
+                            <a class="text-dark fw-bolder text-hover-primary fs-6">{{reclamation.nomuser}}</a>
                         </td>
                         <td>                          
-                            <span class="fw-bold text-dark d-block fs-7">{{reclamation.email}}</span>
+                            <span class="fw-bold text-dark d-block fs-7">{{reclamation.emailuser}}</span>
                         </td>
                         <td>
                             <span class="fw-bold text-dark d-block fs-7">{{reclamation.title}}</span>
@@ -48,14 +48,18 @@
                         </td>
                         <td>
 
-                            <span *ngIf="reclamation.traiter=== true" class="badge badge-light-success">traite</span>
+                            <span *ngIf="reclamation.traiter===true" class="badge badge-light-success">traite</span>
                             <span *ngIf="reclamation.traiter===false" class="badge badge-light-warning ">In Progress</span>
+                           
+                        </td>
+                        <td>
                             <label class="form-check form-switch form-check-custom form-check-solid">
                                 <!--begin::Input-->
-                                <input (click)="update(reclamation.id,reclamation.traiter)"  class="form-check-input" id="traiter" name="traiter" type="checkbox" value="1" checked="checked" />
+                                <input *ngIf="reclamation.traiter===true" (click)="update(reclamation._id,reclamation.traiter)"  class="form-check-input" id="traiter" name="traiter" type="checkbox" value="1" checked="checked" />
+                                <input *ngIf="reclamation.traiter===false" (click)="update(reclamation._id,reclamation.traiter)"  class="form-check-input" id="traiter" name="traiter" type="checkbox"  />
+                            
                                 <!--end::Input-->
                                 <!--begin::Label-->
-                                <span class="form-check-label fw-bold text-muted">Yes</span>
                                 <!--end::Label-->
                             </label>
                         </td>
@@ -87,12 +91,12 @@
                             </div>
                             </div>
                             <div class="modal-body">
-                              <label class="fs-5 fw-bold">supprimer reclamation :  {{reclamation.nom}} </label>
+                              <label class="fs-5 fw-bold">supprimer reclamation :  {{reclamation.nomuser}} </label>
                             </div>
                               <div class="modal-footer">
                                 
                                 <button (click)="modal.dismiss('Cross click')" type="reset" id="kt_modal_new_address_cancel" class="btn btn-light me-3">Discard</button>
-                                <button (click)="delete(reclamation.id)"  type="button" name="" class="btn btn-primary" >supprimer</button>
+                                <button (click)="delete(reclamation._id)"  type="button" name="" class="btn btn-primary" >supprimer</button>
                         
                               </div>
                         </ng-template>
